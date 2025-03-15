@@ -1,0 +1,7 @@
+{
+  "version": "0.1.0",
+  "description": "testing",
+  "dependencies": {
+    "@serialport/list": "^13.0.0"
+  }
+}
