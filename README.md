@@ -4,7 +4,7 @@ An integrated, multi-interface hardware control platform that bridges physical i
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```directory
 ├── Software-Defined Hardware Control Panel/ # KiCad PCB & Schematic Design Files
@@ -28,9 +28,9 @@ An integrated, multi-interface hardware control platform that bridges physical i
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-### ⚡ Firmware (Arduino Uno + C++)
+### Firmware (Arduino Uno + C++)
 - **Dynamic Parameter Store**: Manages up to 5 runtime parameters (e.g., setpoints, configuration coefficients) with safety bounds (minimum and maximum).
 - **Dual Display Modes**:
   - `MODE_FULL`: Shows the parameter name, current value, visual progress bar, and active connected software name.
@@ -38,16 +38,16 @@ An integrated, multi-interface hardware control platform that bridges physical i
 - **Hardware Integration**: Uses interrupt/tick-based rotary encoder tracking and switch inputs.
 - **Real-Time Remote Control**: Provides a clean CSV-style serial communication protocol running at 9600 baud.
 
-### 💻 Python GUI & REST API Daemon (`writeCommand.py`)
+### Python GUI & REST API Daemon (writeCommand.py)
 - **Desktop Console**: Multi-tab GUI for adding, reading, and updating parameters in real time. Contains a live serial traffic log and manual serial command terminal.
 - **On-Demand Pin Reader**: Direct interface to read analog (A0-A5) and digital (D2-D13) pins on the fly.
 - **REST API Backend**: Exposes a background Flask HTTP server on port `5000` to allow web apps or script automation to read and modify hardware states over simple network requests.
 
-### 📐 Hardware Design (KiCad)
+### Hardware Design (KiCad)
 - Complete schematic and PCB design files for a dedicated control panel shield/device.
 - **Interactive BOM (iBOM)** included (`ibom.html`) for easy assembly and soldering.
 
-#### 🖼️ Hardware Gallery
+#### Hardware Gallery
 
 | PCB 3D Render | PCB Routing |
 | :---: | :---: |
@@ -57,16 +57,16 @@ An integrated, multi-interface hardware control platform that bridges physical i
 | :---: |
 | ![Schematic](assets/schematic.png) |
 
-### 📊 MATLAB Integration (`arduinoAMC.mlapp`)
+### MATLAB Integration (arduinoAMC.mlapp)
 - Companion app for control, automation, and visualization of parameter values directly in MATLAB.
 
 ---
 
-## 🔌 Serial Communication Protocol
+## Serial Communication Protocol
 
 The Arduino firmware communicates with host computers via **9600 baud serial connection**. Messages use a command-response format:
 
-### 📥 Host Commands (Commands sent to Arduino)
+### Host Commands (Commands sent to Arduino)
 
 | Command Format | Description | Example |
 | :--- | :--- | :--- |
@@ -78,7 +78,7 @@ The Arduino firmware communicates with host computers via **9600 baud serial con
 | `read:digital,<pin>` | Set digital `<pin>` to input and read state | `read:digital,7` |
 | `read:analog,<index>` | Read analog pin value (A0 + `<index>`) | `read:analog,0` |
 
-### 📤 Arduino Responses & Broadcasts
+### Arduino Responses & Broadcasts
 
 | Response Prefix | Meaning | Format / Response Example |
 | :--- | :--- | :--- |
@@ -93,11 +93,11 @@ The Arduino firmware communicates with host computers via **9600 baud serial con
 
 ---
 
-## 🌐 REST API Documentation
+## REST API Documentation
 
 When running `writeCommand.py`, a Flask API server starts automatically at `http://localhost:5000`.
 
-### 📂 Endpoints
+### Endpoints
 
 #### 1. Get All Parameters
 - **URL**: `/parameters`
@@ -174,7 +174,7 @@ When running `writeCommand.py`, a Flask API server starts automatically at `http
 
 ---
 
-## 🛠️ Setup and Installation
+## Setup and Installation
 
 ### 1. Hardware Assembly
 - Open the KiCad project files inside `Software-Defined Hardware Control Panel/` in KiCad.
